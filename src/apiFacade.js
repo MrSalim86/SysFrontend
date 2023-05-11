@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/CA2";
+const URL = "http://localhost:8080/sysproject";
 
 function handleHttpErrors(res) {
   if (!res.ok) {

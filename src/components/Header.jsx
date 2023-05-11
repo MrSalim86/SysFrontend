@@ -18,6 +18,9 @@ const Header = ({ loggedIn, login, user, logout }) => {
       <li>
         <NavLink to="/weather">Weather</NavLink>
       </li>
+      <li>
+        <NavLink to="/car">Car</NavLink>
+      </li>
       {!loggedIn ? (
         <LogIn login={login} />
       ) : (
