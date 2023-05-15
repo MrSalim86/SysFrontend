@@ -80,3 +80,10 @@ ul.header li a:hover:not(.active) {
   color: blue;
   margin-bottom: 30px;
 }
+
+.register-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

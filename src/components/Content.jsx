@@ -14,6 +14,7 @@ const Content = ({ user }) => {
       <Route path="/jokes" element={<Joke user={user} />} />
       <Route path="/weather" element={<Weather user={user} />} />
       <Route path="/car" element={<Car user={user} />} />
+      <Route path="/RegisterForm" element={<h1>RegisterForm</h1>} />
     </Routes>
   );
 };
