@@ -5,6 +5,7 @@ import React from "react";
 import Joke from "../routes/Jokes.jsx";
 import Weather from "../routes/Weather.jsx";
 import Car from "../routes/Car.jsx";
+import RegisterForm from "../routes/RegisterForm.jsx";
 
 const Content = ({ user }) => {
   return (
@@ -14,7 +15,7 @@ const Content = ({ user }) => {
       <Route path="/jokes" element={<Joke user={user} />} />
       <Route path="/weather" element={<Weather user={user} />} />
       <Route path="/car" element={<Car user={user} />} />
-      <Route path="/RegisterForm" element={<h1>RegisterForm</h1>} />
+      <Route path="/RegisterForm" element={<RegisterForm user={user} />} />
     </Routes>
   );
 };
