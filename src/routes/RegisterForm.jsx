@@ -4,14 +4,16 @@ import "./RegisterForm.css";
 
 const RegisterForm = ({ user }) => {
   const initialState = {
-    firstName: "",
-    lastName: "",
-    email: "",
+    city: "",
+    zipcode: "",
+    street: "",
+    streetNumber: "",
+    Username: "",
     password: "",
   };
 
   const [formData, setFormData] = useState(initialState);
-  const [dataFromServer, setDataFromServer] = useState("Loading...");
+  const [dataFromServer, setDataFromServer] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,27 +49,27 @@ const RegisterForm = ({ user }) => {
     <div className="container">
       <div className="form-container">
         {dataFromServer}
-        <h1>Register</h1>
+        <h1>Personal information</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-            <label htmlFor="firstName">First Name:</label>
+            <label htmlFor="city">City:</label>
             <input
               type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
+              id="city"
+              name="city"
+              value={formData.city}
               onChange={handleChange}
               className="input-field"
             />
           </div>
           <br></br>
           <div className="form-row">
-            <label htmlFor="lastName">Last Name:</label>
+            <label htmlFor="zipcode">Zipcode:</label>
             <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
+              type="number"
+              id="zipcode"
+              name="zipcode"
+              value={formData.zipcode}
               onChange={handleChange}
               className="input-field"
             />
@@ -86,12 +88,12 @@ const RegisterForm = ({ user }) => {
           </div>
           <br></br>
           <div className="form-row">
-            <label htmlFor="City">City:</label>
+            <label htmlFor="streetnumber">Streetnumber:</label>
             <input
-              type="text"
-              id="City"
-              name="City"
-              value={formData.City}
+              type="number"
+              id="streetnumber"
+              name="streetnumber"
+              value={formData.streetnumber}
               onChange={handleChange}
               className="input-field"
             />
