@@ -5,6 +5,7 @@ import LoggedIn from "./components/LoggedIn";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Header from "./components/Header";
 import Content from "./components/Content";
+import Location from "./routes/Location.jsx";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
