@@ -4,23 +4,19 @@ import "./RegisterForm.css";
 
 const RegisterForm = ({ user }) => {
   const initialState = {
-    city: "",
-    zipcode: "",
-    street: "",
-    streetNumber: "",
-    Username: "",
+    username: "",
     password: "",
   };
 
   const [formData, setFormData] = useState(initialState);
-  const [dataFromServer, setDataFromServer] = useState();
+  const [dataFromServer, setDataFromServer] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const url = user.roles.split(",").includes("user")
-          ? "/api/info/user/register"
-          : "/api/register";
+          ? "/api/info/create"
+          : "/api/create";
         const res = await facade.fetchData(url);
         console.log(res);
         setDataFromServer(res.msg);
@@ -37,10 +33,9 @@ const RegisterForm = ({ user }) => {
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+
     // Reset form fields
     setFormData(initialState);
   };
@@ -49,76 +44,26 @@ const RegisterForm = ({ user }) => {
     <div className="container">
       <div className="form-container">
         {dataFromServer}
-        <h1>Personal information</h1>
+        <h1>Create an account</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-            <label htmlFor="city">City:</label>
+            <label htmlFor="username">Username:</label>
             <input
               type="text"
-              id="city"
-              name="city"
-              value={formData.city}
+              id="username1"
+              name="username1"
+              value={formData.username}
               onChange={handleChange}
               className="input-field"
             />
           </div>
           <br></br>
           <div className="form-row">
-            <label htmlFor="zipcode">Zipcode:</label>
-            <input
-              type="number"
-              id="zipcode"
-              name="zipcode"
-              value={formData.zipcode}
-              onChange={handleChange}
-              className="input-field"
-            />
-          </div>
-          <br></br>
-          <div className="form-row">
-            <label htmlFor="Street">Street:</label>
-            <input
-              type="text"
-              id="Street"
-              name="Street"
-              value={formData.Street}
-              onChange={handleChange}
-              className="input-field"
-            />
-          </div>
-          <br></br>
-          <div className="form-row">
-            <label htmlFor="streetnumber">Streetnumber:</label>
-            <input
-              type="number"
-              id="streetnumber"
-              name="streetnumber"
-              value={formData.streetnumber}
-              onChange={handleChange}
-              className="input-field"
-            />
-          </div>
-          <br></br>
-          <br></br>
-          <h1>Username and Password</h1>
-          <div className="form-row">
-            <label htmlFor="Username">Username:</label>
-            <input
-              type="text"
-              id="Username"
-              name="Username"
-              value={formData.Username}
-              onChange={handleChange}
-              className="input-field"
-            />
-          </div>
-          <br></br>
-          <div className="form-row">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password1">Password:</label>
             <input
               type="password"
-              id="password"
-              name="password"
+              id="password1"
+              name="password1"
               value={formData.password}
               onChange={handleChange}
               className="input-field"

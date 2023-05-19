@@ -61,7 +61,7 @@ const Car = ({ user }) => {
   });
 
   carOptions.unshift(
-    <option key="default" value="">
+    <option key="index" value="key">
       Select a car
     </option>
   );
