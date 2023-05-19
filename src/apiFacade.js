@@ -24,7 +24,7 @@ function apiFacade() {
   };
 
   const fetchData = ressource => {
-    const options = makeOptions("GET", true); //True add's the token
+    const options = makeOptions("GET", true); //True adds the token
     return fetch(URL + ressource, options).then(handleHttpErrors);
   };
   const makeOptions = (method, addToken, body) => {
