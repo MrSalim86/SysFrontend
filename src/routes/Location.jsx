@@ -22,7 +22,7 @@ const Location = ({user}) => {
             <h1>Location</h1>
             {location.map((location, index) => (
                 <li key={index}>
-                    <p>IP address: {location.ipaddress}</p>
+                    <p>IP address: {location.ip}</p>
                     <p>Country: {location.country}</p>
                 </li>
             ))}
